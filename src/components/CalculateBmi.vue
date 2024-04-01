@@ -1,7 +1,7 @@
 <script setup>
 
 import { useBmiStore } from "../stores/BmiStore.js";
-import {storeToRefs} from "pinia";
+import { storeToRefs } from "pinia";
 
 
 const BmiStore = useBmiStore()
