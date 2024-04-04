@@ -1,16 +1,27 @@
 <script setup>
 import HeightAndWeight from './components/HeightAndWeight.vue'
 import BmiMain from "./components/BmiMain.vue";
-import CalculateBmi from './components/CalculateBmi.vue'
+
+import {useBmiStore} from "./stores/BmiStore.js";
+import { storeToRefs } from "pinia";
+
+const BmiStore = useBmiStore()
+
+const { computeBmi } = storeToRefs(BmiStore)
 
 </script>
 
 <template>
+
+  <h1>Body Mass Index Calculator</h1>
+
   <div id="app-component">
     <BmiMain></BmiMain>
     <HeightAndWeight></HeightAndWeight>
-    <CalculateBmi></CalculateBmi>
   </div>
+
+  <h2>BMI is: {{ computeBmi }}</h2>
+
 
 </template>
 
