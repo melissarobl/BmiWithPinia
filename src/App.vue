@@ -2,12 +2,12 @@
 import HeightAndWeight from './components/HeightAndWeight.vue'
 import BmiMain from "./components/BmiMain.vue";
 
-import {useBmiStore} from "./stores/BmiStore.js";
+import {useBmiStore} from "./stores/BmiStore.js";  //need to use the store to access computeBmi
 import { storeToRefs } from "pinia";
 
-const BmiStore = useBmiStore()
+const BmiStore = useBmiStore() //create reference to the store
 
-const { computeBmi } = storeToRefs(BmiStore)
+const { computeBmi } = storeToRefs(BmiStore)  //allow access to this reactive data from the store
 
 </script>
 
@@ -18,6 +18,8 @@ const { computeBmi } = storeToRefs(BmiStore)
   <div id="app-component">
     <BmiMain></BmiMain>
     <HeightAndWeight></HeightAndWeight>
+
+    <!--    can also say just <BmiMain/>  and <HeightAndWeight/>-->
   </div>
 
   <h2>BMI is: {{ computeBmi }}</h2>

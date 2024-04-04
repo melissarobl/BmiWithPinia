@@ -1,11 +1,11 @@
 <script setup>
 
-import {useBmiStore} from "../stores/BmiStore.js";
+import {useBmiStore} from "../stores/BmiStore.js"; //need to use the store to access computeBmi
 import { storeToRefs } from "pinia"
 
 const BmiStore = useBmiStore()  //create reference to the store
 
-const { metricUnitsChecked } = storeToRefs(BmiStore)  //put metricUnitsChecked in the store for use
+const { metricUnitsChecked } = storeToRefs(BmiStore)  //allow access to this reactive data in the store
 
 </script>
 

@@ -3,9 +3,9 @@
 import {useBmiStore} from "../stores/BmiStore.js";
 import { storeToRefs } from "pinia"
 
-const BmiStore = useBmiStore()  //create reference to the store
+const BmiStore = useBmiStore()  //create reference to the store to use reactive data
 
-const { height, weight, metricUnitsChecked } = storeToRefs(BmiStore)
+const { height, weight, metricUnitsChecked } = storeToRefs(BmiStore)  //allow access to this reactive data in the store
 
 
 </script>
